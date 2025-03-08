@@ -1,0 +1,15 @@
+diff --git a/toolkit/components/extensions/ExtensionActions.sys.mjs b/toolkit/components/extensions/ExtensionActions.sys.mjs
+index 7aa620587a2fdd5a0c39cdccaf02c90ecded38fb..db710a5ee11338f9d575b38d62c906d5eac09e3d 100644
+--- a/toolkit/components/extensions/ExtensionActions.sys.mjs
++++ b/toolkit/components/extensions/ExtensionActions.sys.mjs
+@@ -239,6 +239,10 @@ class PanelActionBase {
+       return null;
+     }
+ 
++    if (tab.hasAttribute("zen-empty-tab")) {
++      return null;
++    }
++
+     // Now that the action is actually being triggered we can clear any
+     // existing preloaded activeTab permission.
+     this.setActiveTabForPreload(null);
