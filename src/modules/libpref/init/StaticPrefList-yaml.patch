@@ -1,8 +1,21 @@
 diff --git a/modules/libpref/init/StaticPrefList.yaml b/modules/libpref/init/StaticPrefList.yaml
-index a9863858f9a28b2c633edd9689d4379203eef1e6..bd22baf83a17e09a7f64ceb5f3ba6edcceac21f6 100644
+index a9863858f9a28b2c633edd9689d4379203eef1e6..5a9502b8b174fd22a9c1ff4447ee191d451a4791 100644
 --- a/modules/libpref/init/StaticPrefList.yaml
 +++ b/modules/libpref/init/StaticPrefList.yaml
-@@ -18305,7 +18305,7 @@
+@@ -7417,6 +7417,12 @@
+     mirror: always
+ #endif
+ 
++# This needs to be combined with gfx.webrender.all
++- name: gfx.webrender.enable-dithering
++  type: bool
++  value: false
++  mirror: once
++
+ - name: gfx.webrender.enable-low-priority-pool
+   type: RelaxedAtomicBool
+ #if defined(ANDROID)
+@@ -18305,7 +18311,7 @@
  # Whether we use the mica backdrop. Off by default for now.
  - name: widget.windows.mica
    type: bool
@@ -11,7 +24,7 @@ index a9863858f9a28b2c633edd9689d4379203eef1e6..bd22baf83a17e09a7f64ceb5f3ba6edc
    mirror: once
  #endif
  
-@@ -18418,6 +18418,32 @@
+@@ -18418,6 +18424,26 @@
    mirror: always
  #endif
  
@@ -34,12 +47,6 @@ index a9863858f9a28b2c633edd9689d4379203eef1e6..bd22baf83a17e09a7f64ceb5f3ba6edc
 +  value: true
 +  mirror: once
 +#endif
-+
-+# This needs to be combined with gfx.webrender.all
-+- name: zen.gfx.wr.enable-dithering
-+  type: bool
-+  value: false
-+  mirror: once
 +
  #---------------------------------------------------------------------------
  # Prefs starting with "zoom."

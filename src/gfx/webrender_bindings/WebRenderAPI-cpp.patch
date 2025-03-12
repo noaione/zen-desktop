@@ -1,12 +1,12 @@
 diff --git a/gfx/webrender_bindings/WebRenderAPI.cpp b/gfx/webrender_bindings/WebRenderAPI.cpp
-index 687813d4889b3bed07ba0c36975b91ebee363357..e50aadf777ee61fe0a7d2a321e1046892dae2ee6 100644
+index 687813d4889b3bed07ba0c36975b91ebee363357..064fb241fcfaa953ee6a3117a71f64a8305da846 100644
 --- a/gfx/webrender_bindings/WebRenderAPI.cpp
 +++ b/gfx/webrender_bindings/WebRenderAPI.cpp
 @@ -159,6 +159,7 @@ class NewRenderer : public RendererEvent {
              StaticPrefs::gfx_webrender_low_quality_pinch_zoom_AtStartup(),
              StaticPrefs::gfx_webrender_max_shared_surface_size_AtStartup(),
              StaticPrefs::gfx_webrender_enable_subpixel_aa_AtStartup(),
-+            StaticPrefs::zen_gfx_wr_enable_dithering_AtStartup(),
++            StaticPrefs::gfx_webrender_enable_dithering_AtStartup(),
              use_layer_compositor)) {
        // wr_window_new puts a message into gfxCriticalNote if it returns false
        MOZ_ASSERT(errorMessage);
