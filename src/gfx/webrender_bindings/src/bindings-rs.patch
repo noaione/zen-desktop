@@ -1,0 +1,20 @@
+diff --git a/gfx/webrender_bindings/src/bindings.rs b/gfx/webrender_bindings/src/bindings.rs
+index f2f0ab198e5ad13420058f13e49d62178bbf444f..bf133572120f92d2472886c4575805dd584c171b 100644
+--- a/gfx/webrender_bindings/src/bindings.rs
++++ b/gfx/webrender_bindings/src/bindings.rs
+@@ -1855,6 +1855,7 @@ pub extern "C" fn wr_window_new(
+     low_quality_pinch_zoom: bool,
+     max_shared_surface_size: i32,
+     enable_subpixel_aa: bool,
++    enable_dithering: bool,
+     use_layer_compositor: bool,
+ ) -> bool {
+     assert!(unsafe { is_in_render_thread() });
+@@ -2017,6 +2018,7 @@ pub extern "C" fn wr_window_new(
+         reject_software_rasterizer,
+         low_quality_pinch_zoom,
+         max_shared_surface_size,
++        enable_dithering,
+         ..Default::default()
+     };
+ 

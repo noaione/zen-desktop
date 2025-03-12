@@ -354,6 +354,8 @@ pref("devtools.accessibility.enabled", false);
 
 // Enable GPU by default
 // pref('gfx.webrender.all', true);
+// Use dithering on the WebRender GPU backend, not enabled by default since there is still issue
+pref('zen.gfx.wr.enable-dithering', false);
 
 // VAAPI/FFMPEG is Linux only
 #ifdef MOZ_WIDGET_GTK
