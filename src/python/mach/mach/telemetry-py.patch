@@ -1,0 +1,41 @@
+diff --git a/python/mach/mach/telemetry.py b/python/mach/mach/telemetry.py
+index 35d6cc4d1721680b9b8ed8838c39119f49c266d2..28a8df5ded38b830f657581a30af58808e2cdec6 100644
+--- a/python/mach/mach/telemetry.py
++++ b/python/mach/mach/telemetry.py
+@@ -48,22 +48,8 @@ def create_telemetry_from_environment(settings):
+     ):
+         return NoopTelemetry(False)
+ 
+-    is_enabled = is_telemetry_enabled(settings)
+-
+-    try:
+-        from glean import Glean
+-    except ImportError:
+-        return NoopTelemetry(is_enabled)
+-
+-    from pathlib import Path
+-
+-    Glean.initialize(
+-        "mozilla.mach",
+-        "Unknown",
+-        is_enabled,
+-        data_dir=Path(get_state_dir()) / "glean",
+-    )
+-    return GleanTelemetry()
++    # Fully disable build telemetry
++    return NoopTelemetry(False)
+ 
+ 
+ def report_invocation_metrics(telemetry, command):
+@@ -95,10 +81,7 @@ def is_applicable_telemetry_environment():
+ 
+ 
+ def is_telemetry_enabled(settings):
+-    if os.environ.get("DISABLE_TELEMETRY") == "1":
+-        return False
+-
+-    return settings.mach_telemetry.is_enabled
++    return False
+ 
+ 
+ def arcrc_path():

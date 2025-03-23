@@ -424,6 +424,12 @@ pref("app.shield.optoutstudies.enabled", false, locked);
 pref("app.normandy.enabled", false, locked);
 pref("app.normandy.api_url", "", locked);
 
+// Search suggestions black-hole
+pref("browser.urlbar.merino.endpointURL", "https://blackhole.local");
+pref("browser.topsites.contile.endpoint", "https://blackhole.local");
+pref("browser.partnerlink.attributionURL", "https://blackhole.local");
+pref("browser.newtabpage.activity-stream.discoverystream.merino-provider.endpoint", "blackhole.local");
+
 // Fullscreen notice
 pref("full-screen-api.transition-duration.enter", "0 0");
 pref("full-screen-api.transition-duration.leave", "0 0");
